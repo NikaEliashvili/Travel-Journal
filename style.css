@@ -31,18 +31,22 @@ body {
   position: relative;
   z-index: 1;
   background-color: rgb(2, 2, 39);
+  overflow-x: hidden;
 }
 
 body::before {
   content: "";
   position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   height: 100%;
-  /* background: url('./images/backgroundImage.jpg'); */
-  background: url('./public/images/backgroundImage.jpg');
+  background: url('./images/backgroundImage.jpg');
   filter: blur(0.5px) opacity(0.65) brightness(0.3);
   z-index: -1;
-
+  overflow-x: hidden;
 }
 
 .header {
@@ -75,18 +79,9 @@ body::before {
   display: flex;
   flex-direction: column;
   padding: 0;
+  padding: 0 2rem;
   position: relative;
   z-index: 1;
-}
-
-.cards::before {
-  content: "";
-  position: absolute;
-  left: -4rem;
-  width: 115%;
-  height: 100%;
-  filter: blur(40px);
-  z-index: -1;
 }
 
 .card {
@@ -164,4 +159,19 @@ body::before {
   height: 2px;
   background-color: rgba(0, 255, 255, 0.9);
   border: none;
+}
+
+
+@media (max-width: 500px) {
+  html {
+    font-size: 13px;
+  }
+
+}
+
+@media (max-width: 390px) {
+  html {
+    font-size: 11px;
+  }
+
 }
